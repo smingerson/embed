@@ -326,8 +326,7 @@ add_woe <- function(.data, outcome, ..., dictionary = NULL, prefix = "woe") {
 
   output <- dictionary %>%
     dplyr::filter(variable %in% dots_vars) %>%
-    dplyr::select(variable, predictor, woe) %>%
-    dplyr::group_by(variable) 
+    dplyr::select(variable, predictor, woe)
   
   # See https://tidyr.tidyverse.org/dev/articles/in-packages.html
   if (tidyr_new_interface()) {
