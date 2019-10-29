@@ -32,11 +32,11 @@
 
 
 <meta property="og:title" content="Supervised Factor Conversions into Linear Functions using Likelihood Encodings — step_lencode_glm" />
-
 <meta property="og:description" content="step_lencode_glm creates a specification of a recipe step that
 will convert a nominal (i.e. factor) predictor into a single set of
 scores derived from a generalized linear model." />
 <meta name="twitter:card" content="summary" />
+
 
 <meta name="robots" content="noindex">
 
@@ -115,20 +115,25 @@ scores derived from a generalized linear model." />
     </div>
 
     <div class="ref-description">
-    
     <p><code>step_lencode_glm</code> creates a <em>specification</em> of a recipe step that
 will convert a nominal (i.e. factor) predictor into a single set of
 scores derived from a generalized linear model.</p>
-    
     </div>
 
-    <pre class="usage"><span class='fu'>step_lencode_glm</span>(<span class='no'>recipe</span>, <span class='no'>...</span>, <span class='kw'>role</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='kw'>trained</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>outcome</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>mapping</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>skip</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>id</span> <span class='kw'>=</span> <span class='fu'>rand_id</span>(<span class='st'>"lencode_bayes"</span>))
+    <pre class="usage"><span class='fu'>step_lencode_glm</span>(
+  <span class='no'>recipe</span>,
+  <span class='no'>...</span>,
+  <span class='kw'>role</span> <span class='kw'>=</span> <span class='fl'>NA</span>,
+  <span class='kw'>trained</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>outcome</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>mapping</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>skip</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>id</span> <span class='kw'>=</span> <span class='fu'>rand_id</span>(<span class='st'>"lencode_bayes"</span>)
+)
 
 <span class='co'># S3 method for step_lencode_glm</span>
 <span class='fu'><a href='https://rdrr.io/pkg/generics/man/tidy.html'>tidy</a></span>(<span class='no'>x</span>, <span class='no'>...</span>)</pre>
-    
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -184,7 +189,7 @@ the computations for subsequent operations</p></td>
       <td><p>A <code>step_lencode_glm</code> object.</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>An updated version of <code>recipe</code> with the new step added
@@ -192,7 +197,6 @@ to the sequence of existing steps (if any). For the <code>tidy</code>
 method, a tibble with columns <code>terms</code> (the selectors or
 variables for encoding), <code>level</code> (the factor levels), and
 <code>value</code> (the encodings).</p>
-    
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>For each factor predictor, a generalized linear model
@@ -204,7 +208,6 @@ two factor outcomes are used, the log-odds reflect the event of
 interest being the <em>first</em> level of the factor.</p>
 <p>For novel levels, a slightly timmed average of the coefficients
 is returned.</p>
-    
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>Micci-Barreca D (2001) "A preprocessing scheme for
@@ -213,7 +216,6 @@ prediction problems," ACM SIGKDD Explorations Newsletter, 3(1),
 27-32.</p>
 <p>Zumel N and Mount J (2017) "vtreat: a data.frame Processor for
 Predictive Modeling," arXiv:1611.09477</p>
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>recipes</span>)
@@ -230,13 +232,9 @@ Predictive Modeling," arXiv:1611.09477</p>
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      
       <li><a href="#value">Value</a></li>
-
       <li><a href="#details">Details</a></li>
-
       <li><a href="#references">References</a></li>
-      
       <li><a href="#examples">Examples</a></li>
     </ul>
 
